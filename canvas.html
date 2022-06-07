@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>캔버스 요소</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <script type="text/javascript">
+            var canvas = document.getElementById("myCanvas");
+            var myContext = canvas.getContext("2d");
+            var imgObj = new Image();
+            
+            myContext.moveTo(50, 50);
+            
+            myContext.lineTo(200, 50);
+            myContext.lineTo(200, 200);
+            myContext.lineTo(50, 50);
+            myContext.lineTo(50, 200);
+            myContext.lineTo(200, 200);
+            myContext.lineWidth = 10;
+            
+            myContext.rect(50, 50, 200, 200);
+            myContext.rect(200, 200, 50, 50);
+
+            myContext.arc(125, 125, 75, 0, 360, false);
+
+            myContext.stroke();
+
+            imgObj.src = "clownfish.jpg";
+            imgObj.onload = function(){
+                myContext.drawImage(imgObj, 255, 45);
+                myContext.drawImage(imgObj, 255, 225, 50, 50);
+                myContext.drawImage(imgObj, 50, 50, 50, 50, 305, 225, 50, 50)
+                myContext.drawImage(imgObj, 75, 75, 50, 50, 355, 225, 50, 50)
+                myContext.drawImage(imgObj, 100, 100, 50, 50, 405, 225, 50, 50)
+                myContext.drawImage(imgObj, 80, 80, 50, 50, 455, 225, 50, 50)
+            }
+
+            
+        </script>   
+    </body>
+</html>
